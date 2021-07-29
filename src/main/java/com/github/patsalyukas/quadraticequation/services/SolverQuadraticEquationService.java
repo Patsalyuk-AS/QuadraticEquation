@@ -11,7 +11,7 @@ public class SolverQuadraticEquationService implements SolverQuadraticEquation {
             return "Не верно введены коэффициенты!";
         }
         if (a == 0) {
-            return String.format("Корень уравнения: x = %f",(-7 - c) / b);
+            return String.format("Корень уравнения: x = %.3f",(-7 - c) / b);
         }
         c = c +7;
         double disc = b * b - 4 * a * c;
@@ -19,10 +19,11 @@ public class SolverQuadraticEquationService implements SolverQuadraticEquation {
             return "Уравнение не имеет действительных корней!";
         }
         if (disc == 0) {
-            return String.format("Корень уравнения: x = %f", -b/(2 * a));
+            return String.format("Корень уравнения: x = %.3f", -b/(2 * a));
         }
         double x1 = (-b - Math.sqrt(disc)) / (2 * a);
         double x2 = (-b + Math.sqrt(disc)) / (2 * a);
-        return String.format("Корени уравнения: x1 = %f, x2 = %f", x1, x2);
+        return String.format("Корни уравнения: x1 = %.3f, x2 = %.3f", x1, x2);
     }
+
 }
